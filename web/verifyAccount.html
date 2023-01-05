@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Verify Account Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="Template/templateVerify.css">
+    </head>
+    <body>
+        <div class="container" id="container" style="margin-top: 120px">
+            <div class="mt-5">
+                <ul>
+                    <li>You will receive a verification code on your mail after you registered. Enter that code below.</li>
+                    <li>If somehow, you did not receive the verification email then <a href="resendCodeAction">resend the verification email</a></li>
+                </ul>
+                <form action="verifyAction" method="POST">
+                    <input class="form-control mr-sm-2" type="text" name="txtCode" placeholder="Enter the verification code"> <br/>
+                    <button style="background-color: #FFA500" class="btn btn-info">Verify Now</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

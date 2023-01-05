@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Post Article Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+        <script>
+
+            function checkValidate() {
+
+                var error = "";
+                var title = document.getElementById('txtTitle').value;
+                var description = document.getElementById('txtDescription').value;
+
+                if (title.trim() === "") {
+                    error += "Title can't be blank! \n";
+                }
+                if (description.trim() === "") {
+                    error += "Description can't be blank! \n";
+                }
+
+                if (error === "") {
+                    alert("Post Article Success!");
+                    return true;
+                } else {
+                    alert(error);
+                    return false;
+                }
+            }
+
+            $(function () {
+                $("#includedContent").load("header.jsp");
+            });
+        </script> 
+    </head>
+    <body>
+
+        <div id="includedContent">
+        </div>
+        <div class="container shadow" style="margin-top: 100px;">
+            <br/>
+            <div class="h5">Post an article!</div>
+            <hr/>
+            <form action="postArticleAction" method="POST">
+                <label>Tittle</label>
+                <input class="form-control" id="txtTitle" type="text" name="txtTitle" maxlength="100" placeholder="What's on your mind?" autocomplete="off"/> <br/>
+                <label>Description</label>
+                <textarea class="form-control" id="txtDescription" name="txtDescription" maxlength="250" rows="3" autocomplete="off"></textarea> <br/>
+                <label>Image</label>
+                <input class="form-control" type="text" name="txtImage" id="txtImage">
+                <br/>
+                <br/>
+                <input style="background-color: #FFA500; color: white;" onclick="return checkValidate()" class="btn btn-default darken btn-block" type="submit" name="btnAction" value="Post"/>
+                <br/>
+            </form>
+        </div>
+
+    </body>
+</html>
